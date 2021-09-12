@@ -6,6 +6,10 @@ import Sofa from './Sofa'
 import Walls from './Walls'
 import TvTable from './TvTable'
 import CoffeeTable from './CoffeeTable'
+import Tv from './Tv'
+import Carpet from './Carpet'
+import Shelf from './Shelf'
+import Armchair from './Armchair'
 
 export default class World {
   constructor(options) {
@@ -33,6 +37,10 @@ export default class World {
     this.setWalls()
     this.setTvTable()
     this.setCoffeeTable()
+    this.setTv()
+    this.setCarpet()
+    this.setShelf()
+    this.setArmchair()
   }
   setLoader() {
     this.loadDiv = document.querySelector('.loadScreen')
@@ -100,5 +108,33 @@ export default class World {
       assets: this.assets,
     })
     this.container.add(this.CoffeeTable.container)
+  }
+  setTv() {
+    this.Tv = new Tv({
+      time: this.time,
+      assets: this.assets,
+    })
+    this.container.add(this.Tv.container)
+  }
+  setCarpet() {
+    this.Carpet = new Carpet({
+      time: this.time,
+      assets: this.assets,
+    })
+    this.container.add(this.Carpet.container)
+  }
+  setShelf() {
+    this.Shelf = new Shelf({
+      time: this.time,
+      assets: this.assets,
+    })
+    this.container.add(this.Shelf.container)
+  }
+  setArmchair() {
+    this.Armchair = new Armchair({
+      time: this.time,
+      assets: this.assets,
+    })
+    this.container.add(this.Armchair.container)
   }
 }
