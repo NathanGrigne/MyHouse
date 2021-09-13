@@ -10,6 +10,7 @@ import Tv from './Tv'
 import Carpet from './Carpet'
 import Shelf from './Shelf'
 import Armchair from './Armchair'
+import RbcMini from './RbcMini'
 
 export default class World {
   constructor(options) {
@@ -41,6 +42,7 @@ export default class World {
     this.setCarpet()
     this.setShelf()
     this.setArmchair()
+    this.setRbcMini()
   }
   setLoader() {
     this.loadDiv = document.querySelector('.loadScreen')
@@ -136,5 +138,12 @@ export default class World {
       assets: this.assets,
     })
     this.container.add(this.Armchair.container)
+  }
+  setRbcMini() {
+    this.RbcMini = new RbcMini({
+      time: this.time,
+      assets: this.assets,
+    })
+    this.container.add(this.RbcMini.container)
   }
 }
