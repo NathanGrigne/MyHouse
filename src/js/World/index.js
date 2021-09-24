@@ -2,6 +2,7 @@ import { AxesHelper, Object3D } from 'three'
 
 import AmbientLightSource from './AmbientLight'
 import PointLightSource from './PointLight'
+import LightTv from './LightTv'
 import Sofa from './Sofa'
 import Walls from './Walls'
 import TvTable from './TvTable'
@@ -34,6 +35,7 @@ export default class World {
   init() {
     this.setAmbientLight()
     this.setPointLight()
+    this.setLightTv()
     this.setSofa()
     this.setWalls()
     this.setTvTable()
@@ -82,6 +84,12 @@ export default class World {
       debug: this.debugFolder,
     })
     this.container.add(this.light.container)
+  }
+  setLightTv() {
+    this.light2 = new LightTv({
+      debug: this.debugFolder,
+    })
+    this.container.add(this.light2.container)
   }
   setSofa() {
     this.sofa = new Sofa({
